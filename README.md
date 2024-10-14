@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Fairground Website
+Codebase for the Fairground Website.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+Fairground aims to enhance music discovery and engagement by connecting users with their favourite artists, labels, and music scenes. It addresses the challenges of finding curated music, fostering community connections, and simplifying ticketing for live events.
 
-## Available Scripts
+## Installation Instructions
+### TODO: Add content
 
-In the project directory, you can run:
+## Branching Strategy
+We follow a Git Flow branching model to maintain production-ready code in `main` while managing development and feature changes in separate branches.
 
-### `npm start`
+### Branches:
+- **main:** Production-ready code. Only merged from `dev` or `hotfix`.
+- **dev:** Staging environment for features and fixes. Precedes deployment to `main`.
+- **feature/*:** New feature development. Branch from `dev` and merge back into `dev`.
+- **fix/*:** Hotfixes for the current `dev`. Merge back into `dev` upon completion.
+- **release/*:** Prepares new production releases from `dev`. Allows final bug fixes before merging into `main` and `dev`.
+- **hotfix/*:** Critical fixes applied to production from `main`. Merge into both `main` and `dev` once resolved.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Contact Information
+Lead Developer: Michael Butler
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Email: Michaelbutlerjersey@gmail.com
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).

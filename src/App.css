@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: linear-gradient(270deg, #ff7e5f, #feb47b);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.App {
+  min-height: calc(100vh - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.App-footer {
+  width: 100%;
+  padding: 10px;
+  background-color: #f1f1f1;
+  text-align: center;
+  position: relative;
+  bottom: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-footer a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.policy-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: left;
 }
