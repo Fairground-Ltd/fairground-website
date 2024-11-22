@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/fairground-website/static/css/main.be3f5436.css",
-    "main.js": "/fairground-website/static/js/main.b2f6f92c.js",
-    "static/js/453.7ec52147.chunk.js": "/fairground-website/static/js/453.7ec52147.chunk.js",
-    "index.html": "/fairground-website/index.html",
-    "main.be3f5436.css.map": "/fairground-website/static/css/main.be3f5436.css.map",
-    "main.b2f6f92c.js.map": "/fairground-website/static/js/main.b2f6f92c.js.map",
-    "453.7ec52147.chunk.js.map": "/fairground-website/static/js/453.7ec52147.chunk.js.map"
+    "main.css": "./static/css/main.be3f5436.css",
+    "main.js": "./static/js/main.a51551b8.js",
+    "static/js/453.7ec52147.chunk.js": "./static/js/453.7ec52147.chunk.js",
+    "index.html": "./index.html",
+    "main.be3f5436.css.map": "./static/css/main.be3f5436.css.map",
+    "main.a51551b8.js.map": "./static/js/main.a51551b8.js.map",
+    "453.7ec52147.chunk.js.map": "./static/js/453.7ec52147.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.be3f5436.css",
-    "static/js/main.b2f6f92c.js"
+    "static/js/main.a51551b8.js"
   ]
 }
