@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fairground-website/static/css/main.51c12f70.css",
+    "main.js": "/fairground-website/static/js/main.b2a0c9cc.js",
+    "static/js/453.7ec52147.chunk.js": "/fairground-website/static/js/453.7ec52147.chunk.js",
+    "index.html": "/fairground-website/index.html",
+    "main.51c12f70.css.map": "/fairground-website/static/css/main.51c12f70.css.map",
+    "main.b2a0c9cc.js.map": "/fairground-website/static/js/main.b2a0c9cc.js.map",
+    "453.7ec52147.chunk.js.map": "/fairground-website/static/js/453.7ec52147.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.51c12f70.css",
+    "static/js/main.b2a0c9cc.js"
+  ]
+}
