@@ -21,6 +21,6 @@ We follow a Git Flow branching model to maintain production-ready code in `main`
 ## Contact Information
 Lead Developer: Michael Butler
 
-Email: Michaelbutlerjersey@gmail.com
+Email: support@fairground.music
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).

@@ -68,7 +68,7 @@ const TermsAndConditions = () => (
     </p>
 
     <h2>9. Contact Us</h2>
-    <p>If you have any questions or concerns about these Terms, please contact us at michaelbutlerjersey@gmail.com.</p>
+    <p>If you have any questions or concerns about these Terms, please contact us at support@fairground.music.</p>
 
   </div>
 );
