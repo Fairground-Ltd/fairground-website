@@ -1,0 +1,102 @@
+/* HubSpot Form Styles */
+.hs-form-frame {
+  width: 100% !important;
+}
+
+/* Form container */
+.hs-form {
+  font-family: inherit !important;
+}
+
+/* Input fields */
+.hs-form input[type="text"],
+.hs-form input[type="email"],
+.hs-form input[type="tel"],
+.hs-form textarea {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 1rem !important;
+  color: white !important;
+  width: 100% !important;
+  transition: all 0.3s ease !important;
+}
+
+#hs-form-virality-container {
+    display: none !important;
+}
+
+.hs-form input[type="text"]:focus,
+.hs-form input[type="email"]:focus,
+.hs-form input[type="tel"]:focus,
+.hs-form textarea:focus {
+  border-color: rgba(147, 51, 234, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(147, 51, 234, 0.25) !important;
+  outline: none !important;
+}
+
+/* Labels */
+.hs-form label {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0.5rem !important;
+  display: block !important;
+}
+
+/* Submit button */
+.hs-form .hs-button {
+  background: linear-gradient(to right, #9333ea, #3b82f6) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0.75rem !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  margin-top: 1rem !important;
+}
+
+.hs-form .hs-button:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.3) !important;
+}
+
+/* Form field wrapper */
+.hs-form .form-field {
+  margin-bottom: 1.5rem !important;
+}
+
+/* Error messages */
+.hs-form .hs-error-msgs {
+  color: #ef4444 !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Success message */
+.hs-form .submitted-message {
+  color: #10b981 !important;
+  text-align: center !important;
+  padding: 1rem !important;
+  border-radius: 0.75rem !important;
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+/* Placeholder text */
+.hs-form input::placeholder,
+.hs-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Required field indicator */
+.hs-form .hs-form-required {
+  color: #ef4444 !important;
+}
+
+/* Form field descriptions */
+.hs-form .hs-field-desc {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-size: 0.875rem !important;
+  margin-top: 0.25rem !important;
+} 

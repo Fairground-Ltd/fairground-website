@@ -1,26 +1,73 @@
-# Fairground Website
-Codebase for the Fairground Website.
+# Welcome to your Lovable project
 
-## Project Overview
-Fairground aims to enhance music discovery and engagement by connecting users with their favourite artists, labels, and music scenes. It addresses the challenges of finding curated music, fostering community connections, and simplifying ticketing for live events.
+## Project info
 
-## Installation Instructions
-### TODO: Add content
+**URL**: https://lovable.dev/projects/8873dcfa-34a0-4711-8399-5d740d85405d
 
-## Branching Strategy
-We follow a Git Flow branching model to maintain production-ready code in `main` while managing development and feature changes in separate branches.
+## How can I edit this code?
 
-### Branches:
-- **main:** Production-ready code. Only merged from `dev` or `hotfix`.
-- **dev:** Staging environment for features and fixes. Precedes deployment to `main`.
-- **feature/*:** New feature development. Branch from `dev` and merge back into `dev`.
-- **fix/*:** Hotfixes for the current `dev`. Merge back into `dev` upon completion.
-- **release/*:** Prepares new production releases from `dev`. Allows final bug fixes before merging into `main` and `dev`.
-- **hotfix/*:** Critical fixes applied to production from `main`. Merge into both `main` and `dev` once resolved.
+There are several ways of editing your application.
 
-## Contact Information
-Lead Developer: Michael Butler
+**Use Lovable**
 
-Email: support@fairground.music
+Simply visit the [Lovable Project](https://lovable.dev/projects/8873dcfa-34a0-4711-8399-5d740d85405d) and start prompting.
 
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Changes made via Lovable will be committed automatically to this repo.
+
+**Use your preferred IDE**
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
+
+**Edit a file directly in GitHub**
+
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
+
+**Use GitHub Codespaces**
+
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
+
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/8873dcfa-34a0-4711-8399-5d740d85405d) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
