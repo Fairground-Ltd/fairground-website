@@ -104,6 +104,6 @@ export const TRANSLATIONS = {
     }
   },
   footer: {
-    copyright: '© 2024 Fairground Music. All rights reserved.',
+    copyright: '© 2025 Fairground Music. All rights reserved.',
   },
 } as const;
