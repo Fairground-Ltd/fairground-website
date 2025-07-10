@@ -1,8 +1,11 @@
-import { Headphones} from "lucide-react";
+import { Headphones, Users, Mic, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 import { HeroSection } from '@/components/HeroSection';
+import { FeaturesGrid } from '@/components/FeaturesGrid';
 import { IncentivesSection } from '@/components/IncentivesSection';
+import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { ContentBlock } from '@/components/ContentBlock';
+import { WaitlistModal } from '@/components/WaitlistModal';
 import { COLORS } from '@/constants/colors';
 import { TRANSLATIONS } from '@/constants/translations';
 import { cn } from '@/lib/utils';
@@ -29,7 +32,7 @@ const Index = () => {
           title={TRANSLATIONS.contentBlocks.aiDiscovery.title}
           description={TRANSLATIONS.contentBlocks.aiDiscovery.description}
           subDescription={TRANSLATIONS.contentBlocks.aiDiscovery.subDescription}
-          imageSrc="/images/fairground-hero.png"
+          imageSrc="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&h=600&fit=crop"
           imageAlt="AI Music Discovery"
           icon={<Headphones className={cn('w-8 h-8', COLORS.iconPurpleText)} />}
         />
@@ -87,7 +90,10 @@ const Index = () => {
             <p className={cn('text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed', COLORS.textSecondary)}>
               {TRANSLATIONS.waitlistBanner.description}
             </p>
-           
+            <WaitlistModal 
+              triggerText="Join Waitlist"
+              triggerClassName="text-xl px-16 py-5"
+            />
           </div>
         </div>
       </div>

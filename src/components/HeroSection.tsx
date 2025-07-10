@@ -2,6 +2,7 @@ import { Music } from "lucide-react";
 import { COLORS } from '@/constants/colors';
 import { TRANSLATIONS } from '@/constants/translations';
 import { cn } from '@/lib/utils';
+import { WaitlistModal } from './WaitlistModal';
 
 export const HeroSection = () => {
   return (
@@ -33,7 +34,10 @@ export const HeroSection = () => {
           {TRANSLATIONS.hero.description}
         </p>
 
-       
+        {/* Waitlist Signup Modal */}
+        <div className="max-w-lg mx-auto mb-8 animate-fade-in">
+          <WaitlistModal />
+        </div>
 
         {/* Social Proof */}
         <p className={cn('mb-16 animate-fade-in', COLORS.textMuted)}>
