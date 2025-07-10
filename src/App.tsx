@@ -16,16 +16,16 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/jobs" element={<Jobs />} />
-          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <BrowserRouter basename="/">
+  <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="/jobs" element={<Jobs />} />
+    <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+</BrowserRouter>
+
     </TooltipProvider>
   </QueryClientProvider>
 );
