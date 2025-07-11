@@ -95,7 +95,14 @@ export const TRANSLATIONS = {
   waitlistBanner: {
     title: 'Join the Waitlist',
     description: 'Be there from day one. Help build the future of independent music.',
-  },
+    success: "🎉 Thank you! You've been added to the waitlist.",
+    already: "👋 No worries, you're already on the waitlist. Thanks for checking again!",
+    error: "❌ Something went wrong. Please try again.",
+    placeholder: "Your email",
+    button: "Join Now!",
+    ok: "OK"
+},
+
   contentBlocks: {
     aiDiscovery: {
       title: 'One platform. The whole ecosystem.',
