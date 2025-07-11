@@ -1,24 +1,33 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import { createClient } from "@supabase/supabase-js";
 import { TRANSLATIONS } from "@/constants/translations";
 
-// Supabase client
 const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
+  import.meta.env.VITE_SUPABASE_URL!,
+  import.meta.env.VITE_SUPABASE_ANON_KEY!
 );
-
 
 export default function WaitlistSignup() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<null | "success" | "already" | "error">(null);
+  const [status, setStatus] = useState<null | "success" | "already" | "error" | "captcha">(null);
   const [loading, setLoading] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus(null);
+
+    const recaptchaValue = recaptchaRef.current?.getValue();
+
+    if (!recaptchaValue) {
+      setStatus("captcha");
+      return;
+    }
+
     setLoading(true);
 
+    // Check if email already exists
     const { data: existing, error: checkError } = await supabase
       .from("waitlist")
       .select("email")
@@ -26,7 +35,6 @@ export default function WaitlistSignup() {
       .single();
 
     if (checkError && checkError.code !== "PGRST116") {
-      console.error("Check error:", checkError);
       setStatus("error");
       setLoading(false);
       return;
@@ -40,7 +48,6 @@ export default function WaitlistSignup() {
         .insert([{ email }]);
 
       if (insertError) {
-        console.error("Insert error:", insertError);
         setStatus("error");
       } else {
         setStatus("success");
@@ -48,6 +55,7 @@ export default function WaitlistSignup() {
     }
 
     setLoading(false);
+    recaptchaRef.current?.reset();
   };
 
   const resetForm = () => {
@@ -84,10 +92,24 @@ export default function WaitlistSignup() {
             disabled={loading}
           />
 
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+            onChange={() => {
+              if (status === "captcha") setStatus(null);
+            }}
+          />
+
+          {status === "captcha" && (
+            <div className="mt-2 text-yellow-400 text-center font-medium">
+              Please verify that you are not a robot.
+            </div>
+          )}
+
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-2 rounded text-white font-bold transition ${
+            className={`w-full mt-4 py-2 rounded text-white font-bold transition ${
               loading
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-gradient-to-r from-purple-500 to-blue-500"
