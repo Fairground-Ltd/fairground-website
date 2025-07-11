@@ -17,7 +17,7 @@ export default function WaitlistSignup() {
     setStatus(null);
     setLoading(true);
 
-    // First check if email is already in waitlist
+    // Check if email already exists
     const { data: existing, error: checkError } = await supabase
       .from("waitlist")
       .select("email")
@@ -32,10 +32,8 @@ export default function WaitlistSignup() {
     }
 
     if (existing) {
-      // Already exists
       setStatus("already");
     } else {
-      // Insert new entry
       const { error: insertError } = await supabase
         .from("waitlist")
         .insert([{ email }]);
@@ -57,16 +55,16 @@ export default function WaitlistSignup() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 rounded-xl bg-white shadow">
+    <div className="w-full max-w-md mx-auto p-6 rounded-xl">
       {status === "success" || status === "already" ? (
         <div className="text-center">
           {status === "success" && (
-            <p className="text-green-600 font-semibold mb-4">
+            <p className="text-green-400 font-semibold mb-4">
               🎉 Thank you! You've been added to the waitlist.
             </p>
           )}
           {status === "already" && (
-            <p className="text-blue-600 font-semibold mb-4">
+            <p className="text-blue-400 font-semibold mb-4">
               👋 No worries, you're already on the waitlist. Thanks for checking again!
             </p>
           )}
@@ -79,15 +77,13 @@ export default function WaitlistSignup() {
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
-          <label className="block mb-2 text-lg font-semibold sr-only">Join the Waitlist</label>
-
           <input
             type="email"
             required
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder="Your email"
-            className="w-full p-2 rounded mb-4 text-black border"
+            className="w-full p-2 rounded mb-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400"
             disabled={loading}
           />
 
@@ -104,7 +100,7 @@ export default function WaitlistSignup() {
           </button>
 
           {status === "error" && (
-            <div className="mt-4 text-red-600 text-center font-medium">
+            <div className="mt-4 text-red-400 text-center font-medium">
               ❌ Something went wrong. Please try again.
             </div>
           )}
