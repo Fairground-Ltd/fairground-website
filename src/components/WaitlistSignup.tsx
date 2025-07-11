@@ -86,9 +86,6 @@ export default function WaitlistSignup() {
 
       {status !== "success" && status !== "already" && status !== "bot" && (
         <form onSubmit={handleSubmit}>
-          <h2 className="text-xl font-bold text-white mb-2">{TRANSLATIONS.waitlistBanner.title}</h2>
-          <p className="text-sm text-white/70 mb-4">{TRANSLATIONS.waitlistBanner.description}</p>
-
           <input
             type="email"
             required
