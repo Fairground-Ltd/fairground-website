@@ -10,7 +10,9 @@ const supabase = createClient(
 
 export default function WaitlistSignup() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<null | "success" | "already" | "error" | "captcha">(null);
+  const [status, setStatus] = useState<
+    null | "success" | "already" | "error" | "captcha"
+  >(null);
   const [loading, setLoading] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
@@ -27,7 +29,6 @@ export default function WaitlistSignup() {
 
     setLoading(true);
 
-    // Check if email already exists
     const { data: existing, error: checkError } = await supabase
       .from("waitlist")
       .select("email")
@@ -65,10 +66,16 @@ export default function WaitlistSignup() {
 
   return (
     <div className="w-full max-w-md mx-auto p-6 rounded-xl">
-      {status === "success" || status === "already" ? (
+      {(status === "success" || status === "already") && (
         <div className="text-center">
-          <p className={`mb-4 font-semibold ${status === "success" ? "text-green-400" : "text-blue-400"}`}>
-            {status === "success" ? TRANSLATIONS.waitlistBanner.success : TRANSLATIONS.waitlistBanner.already}
+          <p
+            className={`mb-4 font-semibold ${
+              status === "success" ? "text-green-400" : "text-blue-400"
+            }`}
+          >
+            {status === "success"
+              ? TRANSLATIONS.waitlistBanner.success
+              : TRANSLATIONS.waitlistBanner.already}
           </p>
           <button
             onClick={resetForm}
@@ -77,28 +84,43 @@ export default function WaitlistSignup() {
             {TRANSLATIONS.waitlistBanner.ok}
           </button>
         </div>
-      ) : (
+      )}
+
+      {status !== "success" && status !== "already" && (
         <form onSubmit={handleSubmit}>
-          <h2 className="text-xl font-bold text-white mb-2">{TRANSLATIONS.waitlistBanner.title}</h2>
-          <p className="text-sm text-white/70 mb-4">{TRANSLATIONS.waitlistBanner.description}</p>
+          <h2 className="text-xl font-bold text-white mb-2">
+            {TRANSLATIONS.waitlistBanner.title}
+          </h2>
+          <p className="text-sm text-white/70 mb-4">
+            {TRANSLATIONS.waitlistBanner.description}
+          </p>
 
           <input
             type="email"
             required
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder={TRANSLATIONS.waitlistBanner.placeholder}
             className="w-full p-2 rounded mb-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400"
             disabled={loading}
           />
 
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-            onChange={() => {
-              if (status === "captcha") setStatus(null);
+          {/* Wrap reCAPTCHA with div to fix stacking / clickable */}
+          <div
+            style={{
+              position: "relative",
+              zIndex: 9999,
+              marginBottom: "1rem",
             }}
-          />
+          >
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY!}
+              onChange={() => {
+                if (status === "captcha") setStatus(null);
+              }}
+            />
+          </div>
 
           {status === "captcha" && (
             <div className="mt-2 text-yellow-400 text-center font-medium">
@@ -109,7 +131,7 @@ export default function WaitlistSignup() {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full mt-4 py-2 rounded text-white font-bold transition ${
+            className={`w-full py-2 rounded text-white font-bold transition ${
               loading
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-gradient-to-r from-purple-500 to-blue-500"
