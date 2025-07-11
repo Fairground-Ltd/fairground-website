@@ -1,29 +1,25 @@
-import { useState, useRef } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { TRANSLATIONS } from "@/constants/translations";
 
 const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL!,
-  import.meta.env.VITE_SUPABASE_ANON_KEY!
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
 );
 
 export default function WaitlistSignup() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<
-    null | "success" | "already" | "error" | "captcha"
-  >(null);
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<null | "success" | "already" | "error" | "bot">(null);
   const [loading, setLoading] = useState(false);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus(null);
 
-    const recaptchaValue = recaptchaRef.current?.getValue();
-
-    if (!recaptchaValue) {
-      setStatus("captcha");
+    if (honeypot) {
+      setStatus("bot");
+      setLoading(false);
       return;
     }
 
@@ -44,38 +40,40 @@ export default function WaitlistSignup() {
     if (existing) {
       setStatus("already");
     } else {
-      const { error: insertError } = await supabase
-        .from("waitlist")
-        .insert([{ email }]);
-
+      const { error: insertError } = await supabase.from("waitlist").insert([{ email }]);
       if (insertError) {
         setStatus("error");
       } else {
         setStatus("success");
+        setEmail("");
       }
     }
 
     setLoading(false);
-    recaptchaRef.current?.reset();
   };
 
   const resetForm = () => {
     setEmail("");
+    setHoneypot("");
     setStatus(null);
   };
 
   return (
     <div className="w-full max-w-md mx-auto p-6 rounded-xl">
-      {(status === "success" || status === "already") && (
+      {(status === "success" || status === "already" || status === "bot") && (
         <div className="text-center">
-          <p
-            className={`mb-4 font-semibold ${
-              status === "success" ? "text-green-400" : "text-blue-400"
-            }`}
-          >
+          <p className={`mb-4 font-semibold ${
+            status === "success"
+              ? "text-green-400"
+              : status === "already"
+              ? "text-blue-400"
+              : "text-gray-400"
+          }`}>
             {status === "success"
               ? TRANSLATIONS.waitlistBanner.success
-              : TRANSLATIONS.waitlistBanner.already}
+              : status === "already"
+              ? TRANSLATIONS.waitlistBanner.already
+              : "Thank you for your submission."}
           </p>
           <button
             onClick={resetForm}
@@ -86,47 +84,30 @@ export default function WaitlistSignup() {
         </div>
       )}
 
-      {status !== "success" && status !== "already" && (
+      {status !== "success" && status !== "already" && status !== "bot" && (
         <form onSubmit={handleSubmit}>
-          <h2 className="text-xl font-bold text-white mb-2">
-            {TRANSLATIONS.waitlistBanner.title}
-          </h2>
-          <p className="text-sm text-white/70 mb-4">
-            {TRANSLATIONS.waitlistBanner.description}
-          </p>
+          <h2 className="text-xl font-bold text-white mb-2">{TRANSLATIONS.waitlistBanner.title}</h2>
+          <p className="text-sm text-white/70 mb-4">{TRANSLATIONS.waitlistBanner.description}</p>
 
           <input
             type="email"
             required
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={e => setEmail(e.target.value)}
             placeholder={TRANSLATIONS.waitlistBanner.placeholder}
             className="w-full p-2 rounded mb-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400"
             disabled={loading}
           />
 
-          {/* Wrap reCAPTCHA with div to fix stacking / clickable */}
-          <div
-            style={{
-              position: "relative",
-              zIndex: 9999,
-              marginBottom: "1rem",
-            }}
-          >
-            <ReCAPTCHA
-              ref={recaptchaRef}
-              sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY!}
-              onChange={() => {
-                if (status === "captcha") setStatus(null);
-              }}
-            />
-          </div>
-
-          {status === "captcha" && (
-            <div className="mt-2 text-yellow-400 text-center font-medium">
-              Please verify that you are not a robot.
-            </div>
-          )}
+          <input
+            type="text"
+            name="website"
+            value={honeypot}
+            onChange={e => setHoneypot(e.target.value)}
+            style={{ display: "none" }}
+            autoComplete="off"
+            tabIndex={-1}
+          />
 
           <button
             type="submit"
