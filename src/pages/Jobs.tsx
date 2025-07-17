@@ -221,14 +221,17 @@ const Jobs = () => {
             We're always looking for talented individuals to join our team. 
             Send us your resume and tell us how you'd like to contribute to Fairground.
           </p>
-          <button className={cn(
-            'px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r',
-            COLORS.buttonGradient,
-            `hover:${COLORS.buttonHover}`,
-            'transform hover:scale-105'
-          )}>
+          <a 
+            href="mailto:careers@fairground.music"
+            className={cn(
+              'inline-block px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r text-white',
+              COLORS.buttonGradient,
+              `hover:${COLORS.buttonHover}`,
+              'transform hover:scale-105'
+            )}
+          >
             Get in Touch
-          </button>
+          </a>
         </div>
       </section>
 
