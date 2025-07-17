@@ -32,9 +32,9 @@ const JobDetailsModal = ({ job, isOpen, onClose }: JobDetailsModalProps) => {
           <div className="flex items-center space-x-4">
             <div className={cn(
               'p-3 rounded-full',
-              COLORS.iconPurple
+              COLORS.iconPrimary
             )}>
-              <Building className={cn('w-6 h-6', COLORS.iconPurpleText)} />
+              <Building className={cn('w-6 h-6', COLORS.iconPrimaryText)} />
             </div>
             <div>
               <h1 className={cn('text-2xl font-bold', COLORS.textPrimary)}>
@@ -102,7 +102,7 @@ const JobDetailsModal = ({ job, isOpen, onClose }: JobDetailsModalProps) => {
               <ul className={cn('space-y-3', COLORS.textSecondary)}>
                 {job.keyResponsibilities.map((responsibility, index) => (
                   <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className={cn('w-5 h-5 mt-0.5 flex-shrink-0', COLORS.iconPrimaryText)} />
                     <span className="text-lg">{responsibility}</span>
                   </li>
                 ))}
@@ -119,7 +119,7 @@ const JobDetailsModal = ({ job, isOpen, onClose }: JobDetailsModalProps) => {
               <ul className={cn('space-y-3', COLORS.textSecondary)}>
                 {job.essentialSkills.map((skill, index) => (
                   <li key={index} className="flex items-start space-x-3">
-                    <Circle className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
+                    <Circle className={cn('w-5 h-5 mt-0.5 flex-shrink-0', COLORS.iconPrimaryText)} />
                     <span className="text-lg">{skill}</span>
                   </li>
                 ))}
@@ -136,7 +136,7 @@ const JobDetailsModal = ({ job, isOpen, onClose }: JobDetailsModalProps) => {
               <ul className={cn('space-y-3', COLORS.textSecondary)}>
                 {job.desirableSkills.map((skill, index) => (
                   <li key={index} className="flex items-start space-x-3">
-                    <Circle className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
+                    <Circle className={cn('w-5 h-5 mt-0.5 flex-shrink-0', COLORS.iconSecondaryText)} />
                     <span className="text-lg">{skill}</span>
                   </li>
                 ))}
@@ -153,7 +153,7 @@ const JobDetailsModal = ({ job, isOpen, onClose }: JobDetailsModalProps) => {
               <ul className={cn('space-y-3', COLORS.textSecondary)}>
                 {job.whyJoinUs.map((reason, index) => (
                   <li key={index} className="flex items-start space-x-3">
-                    <CheckCircle2 className="w-5 h-5 text-purple-400 mt-0.5 flex-shrink-0" />
+                    <CheckCircle2 className={cn('w-5 h-5 mt-0.5 flex-shrink-0', COLORS.iconPrimaryText)} />
                     <span className="text-lg">{reason}</span>
                   </li>
                 ))}

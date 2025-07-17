@@ -104,7 +104,7 @@ const Jobs = () => {
       {/* Hero Section */}
       <section className="relative z-10 container mx-auto px-4 py-16">
         <div className="text-center max-w-4xl mx-auto">
-          <h1 className={cn('text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent')}>
+          <h1 className={cn('text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent font-fgled')}>
             Join Our Team
           </h1>
           <p className={cn('text-xl md:text-2xl mb-8 leading-relaxed', COLORS.textSecondary)}>
@@ -115,7 +115,7 @@ const Jobs = () => {
 
       {/* Open Positions */}
       <section className="relative z-10 container mx-auto px-4 py-16">
-        <h2 className={cn('text-3xl md:text-4xl font-bold text-center mb-12', COLORS.textPrimary)}>
+        <h2 className={cn('text-3xl md:text-4xl font-bold text-center mb-12 font-fgdisplay', COLORS.textPrimary)}>
           Open Positions
         </h2>
         <div className="max-w-4xl mx-auto space-y-6">
@@ -132,7 +132,7 @@ const Jobs = () => {
               )}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <h3 className={cn('text-xl font-semibold mb-2 md:mb-0', COLORS.textPrimary)}>
+                <h3 className={cn('text-xl font-semibold mb-2 md:mb-0 font-fgdisplay', COLORS.textPrimary)}>
                   {position.title}
                 </h3>
                 <div className="flex flex-wrap gap-3">
@@ -162,7 +162,7 @@ const Jobs = () => {
       {/* Company Culture */}
       <section className="relative z-10 container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className={cn('text-3xl md:text-4xl font-bold mb-8', COLORS.textPrimary)}>
+          <h2 className={cn('text-3xl md:text-4xl font-bold mb-8 font-fgdisplay', COLORS.textPrimary)}>
             Why Work With Us?
           </h2>
           <p className={cn('text-lg mb-12 leading-relaxed', COLORS.textSecondary)}>
@@ -174,7 +174,7 @@ const Jobs = () => {
 
       {/* Benefits */}
       <section className="relative z-10 container mx-auto px-4 py-16">
-        <h2 className={cn('text-3xl md:text-4xl font-bold text-center mb-12', COLORS.textPrimary)}>
+        <h2 className={cn('text-3xl md:text-4xl font-bold text-center mb-12 font-fgdisplay', COLORS.textPrimary)}>
           Benefits & Perks
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -195,7 +195,7 @@ const Jobs = () => {
               )}>
                 {benefit.icon}
               </div>
-              <h3 className={cn('text-lg font-semibold mb-2', COLORS.textPrimary)}>
+              <h3 className={cn('text-lg font-semibold mb-2 font-fgdisplay', COLORS.textPrimary)}>
                 {benefit.title}
               </h3>
               <p className={cn('text-sm', COLORS.textSecondary)}>

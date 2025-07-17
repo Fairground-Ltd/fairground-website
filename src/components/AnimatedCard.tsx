@@ -15,7 +15,7 @@ export const AnimatedCard = ({ children, className, glowColor }: AnimatedCardPro
   return (
     <div
       className={cn(
-        'p-8 backdrop-blur-sm rounded-3xl border transition-all duration-500 transform hover:scale-105 group',
+        'p-8 backdrop-blur-sm rounded-3xl border transition-all duration-500 transform hover:scale-105 group relative overflow-hidden',
         COLORS.cardBackground,
         COLORS.cardBorder,
         `hover:${COLORS.cardBackgroundHover}`,
@@ -25,6 +25,15 @@ export const AnimatedCard = ({ children, className, glowColor }: AnimatedCardPro
         className
       )}
     >
+      {/* Subtle corner logo accent - positioned on left side */}
+      <div className="absolute top-3 left-3 opacity-10 pointer-events-none">
+        <img 
+          src="/images/fairground-logo-white.svg" 
+          alt="Fairground"
+          className="w-6 h-6"
+        />
+      </div>
+      
       {children}
     </div>
   );

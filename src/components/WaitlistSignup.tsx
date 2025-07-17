@@ -61,12 +61,12 @@ export default function WaitlistSignup() {
   return (
     <div className="w-full max-w-md mx-auto p-6 rounded-xl">
       {(status === "success" || status === "already" || status === "bot") && (
-        <div className="text-center">
-          <p className={`mb-4 font-semibold ${
+        <div className="text-center font-fginterface">
+          <p className={`mb-4 font-semibold font-fginterface ${
             status === "success"
-              ? "text-green-400"
+              ? "text-orange-400"
               : status === "already"
-              ? "text-blue-400"
+              ? "text-orange-300"
               : "text-gray-400"
           }`}>
             {status === "success"
@@ -77,7 +77,7 @@ export default function WaitlistSignup() {
           </p>
           <button
             onClick={resetForm}
-            className="px-4 py-2 rounded bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
+            className="px-4 py-2 rounded bg-orange-600 text-white font-fginterface font-medium hover:bg-orange-700 transition"
           >
             {TRANSLATIONS.waitlistBanner.ok}
           </button>
@@ -85,14 +85,14 @@ export default function WaitlistSignup() {
       )}
 
       {status !== "success" && status !== "already" && status !== "bot" && (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="font-fginterface">
           <input
             type="email"
             required
             value={email}
             onChange={e => setEmail(e.target.value)}
             placeholder={TRANSLATIONS.waitlistBanner.placeholder}
-            className="w-full p-2 rounded mb-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full p-2 rounded mb-4 bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-orange-400 font-fginterface"
             disabled={loading}
           />
 
@@ -109,17 +109,17 @@ export default function WaitlistSignup() {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-2 rounded text-white font-bold transition ${
+            className={`w-full py-2 rounded text-white font-bold font-fginterface transition ${
               loading
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-gradient-to-r from-purple-500 to-blue-500"
+                : "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
             }`}
           >
             {loading ? "Submitting..." : TRANSLATIONS.waitlistBanner.button}
           </button>
 
           {status === "error" && (
-            <div className="mt-4 text-red-400 text-center font-medium">
+            <div className="mt-4 text-orange-400 text-center font-medium font-fginterface">
               {TRANSLATIONS.waitlistBanner.error}
             </div>
           )}

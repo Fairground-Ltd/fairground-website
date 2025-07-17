@@ -2,8 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@font-face {
+  font-family: 'FG LED';
+  src: url('/fonts/FG-LED-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FG Studio Display';
+  src: url('/fonts/FG-Studio-Display.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FG Studio Interface';
+  src: url('/fonts/FG-Studio-Interface.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
+    /* Fairground Brand Colors - Official Brand Guidelines v1.1 */
+    --fairground-black: 0 0% 0%;           /* #000000 - Core brand color */
+    --fairground-pink-orange: 13 100% 71%; /* #FF6648 - Primary accent */
+    --fairground-mid-gray: 40 3% 88%;      /* #E2E1E0 - Neutral mid-tone */
+    --fairground-warm-gray: 40 7% 93%;     /* #F0EFED - Light neutral */
+    --fairground-off-white: 0 0% 96%;      /* #F5F5F5 - Softest neutral */
+    
+    /* Default shadcn/ui theme variables */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
