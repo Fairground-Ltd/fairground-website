@@ -13,7 +13,7 @@ export const COLORS = {
   
   // Typography hierarchy - Brand-compliant text colors
   textPrimary: 'text-white',              // Primary headings and important text
-  textSecondary: 'text-gray-300',         // Body text and descriptions
+  textSecondary: 'text-white',            // Body text and descriptions
   textAccent: 'text-orange-400',          // Brand pink-orange for highlights
   textMuted: 'text-gray-400',             // Subtle text and labels
   
@@ -34,10 +34,10 @@ export const COLORS = {
   iconAccent: 'bg-red-500/20',            // Accent icons - complementary red
   
   // Icon text colors - Matching icon backgrounds
-  iconPrimaryText: 'text-orange-400',     // Primary icon text
-  iconSecondaryText: 'text-gray-400',     // Secondary icon text
-  iconTertiaryText: 'text-slate-400',     // Tertiary icon text
-  iconAccentText: 'text-red-400',         // Accent icon text
+  iconPrimaryText: 'text-white',          // Primary icon text
+  iconSecondaryText: 'text-white',        // Secondary icon text
+  iconTertiaryText: 'text-white',         // Tertiary icon text
+  iconAccentText: 'text-white',           // Accent icon text
   
   // Success states - Brand-aligned feedback colors
   successBackground: 'bg-orange-500/20',

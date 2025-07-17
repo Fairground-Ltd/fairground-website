@@ -23,7 +23,10 @@ export const HeroSection = () => {
               className="w-8 h-8 md:w-10 md:h-10 transition-all duration-300 group-hover:scale-110"
             />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-white via-orange-200 to-red-200 bg-clip-text text-transparent mb-6 animate-fade-in font-fgled">
+          <h1 className={cn(
+            'text-5xl md:text-6xl font-bold mb-6 animate-fade-in font-fgled',
+            COLORS.textPrimary
+          )}>
             {TRANSLATIONS.hero.title}
           </h1>
         </div>

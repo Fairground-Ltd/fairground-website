@@ -1,6 +1,7 @@
 import { ReactNode, lazy, Suspense } from 'react';
 import { COLORS } from '@/constants/colors';
 import { cn } from '@/lib/utils';
+import { Camera } from 'lucide-react';
 
 const LazyImage = lazy(() => import('./LazyImage'));
 
@@ -13,6 +14,7 @@ interface ContentBlockProps {
   icon: ReactNode;
   reverse?: boolean;
   className?: string;
+  photoCredit?: string;
 }
 
 export const ContentBlock = ({
@@ -24,6 +26,7 @@ export const ContentBlock = ({
   icon,
   reverse = false,
   className,
+  photoCredit,
 }: ContentBlockProps) => {
   return (
     <div className={cn('container mx-auto px-4 pb-20 relative', className)}>
@@ -93,6 +96,20 @@ export const ContentBlock = ({
               />
             </Suspense>
           </div>
+          
+          {/* Photo Credit */}
+          {photoCredit && (
+            <div className="mt-4 flex items-center justify-center space-x-2">
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+              <div className="px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
+                <p className="text-xs text-gray-300 font-fginterface flex items-center space-x-1.5">
+                  <Camera className="w-3 h-3 text-orange-400" />
+                  <span>{photoCredit}</span>
+                </p>
+              </div>
+              <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
+            </div>
+          )}
         </div>
       </div>
     </div>

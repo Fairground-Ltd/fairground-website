@@ -36,6 +36,7 @@ const Index = () => {
           imageSrc="images/fairground-hero.png"
           imageAlt="AI Music Discovery"
           icon={<Headphones className={cn('w-8 h-8', COLORS.iconPrimaryText)} />}
+          photoCredit="Photo by Lucas Eveleigh"
         />
       </div>
 
