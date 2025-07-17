@@ -103,7 +103,7 @@ export const ContentBlock = ({
               <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent"></div>
               <div className="px-3 py-1 rounded-full bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm">
                 <p className="text-xs text-gray-300 font-fginterface flex items-center space-x-1.5">
-                  <Camera className="w-3 h-3 text-orange-400" />
+                  <Camera className="w-3 h-3 text-white" />
                   <span>{photoCredit}</span>
                 </p>
               </div>

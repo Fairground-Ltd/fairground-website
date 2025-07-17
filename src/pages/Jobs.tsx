@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { COLORS } from '@/constants/colors';
 import { cn } from '@/lib/utils';
 import JobDetailsModal from '@/components/JobDetailsModal';
+import { Footer } from '@/components/Footer';
 
 const Jobs = () => {
   const [openPositions, setOpenPositions] = useState<any[]>([]);
@@ -53,17 +54,17 @@ const Jobs = () => {
 
   const benefits = [
     {
-      icon: <Zap className="w-6 h-6" />,
+      icon: <Zap className="w-6 h-6 text-white" />,
       title: "Flexible Work",
       description: "Remote-first culture with flexible working hours"
     },
     {
-      icon: <Award className="w-6 h-6" />,
+      icon: <Award className="w-6 h-6 text-white" />,
       title: "Growth Opportunities",
       description: "Professional development and learning budget"
     },
     {
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="w-6 h-6 text-white" />,
       title: "Great Team",
       description: "Work with passionate, talented individuals"
     }
@@ -96,7 +97,7 @@ const Jobs = () => {
             `hover:${COLORS.textPrimary}`
           )}
         >
-          <ArrowLeft className="w-5 h-5" />
+          <ArrowLeft className="w-5 h-5 text-white" />
           <span>Back to Home</span>
         </Link>
       </header>
@@ -140,11 +141,11 @@ const Jobs = () => {
                     {position.department}
                   </span>
                   <div className={cn('flex items-center space-x-1 text-sm', COLORS.textMuted)}>
-                    <MapPin className="w-4 h-4" />
+                    <MapPin className="w-4 h-4 text-white" />
                     <span>{position.location}</span>
                   </div>
                   <div className={cn('flex items-center space-x-1 text-sm', COLORS.textMuted)}>
-                    <Clock className="w-4 h-4" />
+                    <Clock className="w-4 h-4 text-white" />
                     <span>{position.type}</span>
                   </div>
                 </div>
@@ -218,7 +219,7 @@ const Jobs = () => {
           </h2>
           <p className={cn('mb-6', COLORS.textSecondary)}>
             We're always looking for talented individuals to join our team. 
-            Send us your resume and tell us how you'd like to contribute to Deaku.
+            Send us your resume and tell us how you'd like to contribute to Fairground.
           </p>
           <button className={cn(
             'px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r',
@@ -232,13 +233,7 @@ const Jobs = () => {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 border-t border-white/10 mt-20">
-        <div className="container mx-auto px-4 py-8">
-          <div className={cn('text-center', COLORS.textMuted)}>
-            <p>&copy; 2024 Deaku. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Job Details Modal */}
       <JobDetailsModal 
