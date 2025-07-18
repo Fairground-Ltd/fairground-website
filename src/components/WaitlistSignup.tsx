@@ -77,7 +77,7 @@ export default function WaitlistSignup() {
           </p>
           <button
             onClick={resetForm}
-            className="px-4 py-2 rounded bg-orange-600 text-white font-fginterface font-medium hover:bg-orange-700 transition"
+            className="px-4 py-2 rounded bg-[#FF6648] text-white font-fginterface font-medium hover:bg-[#E55539] transition"
           >
             {TRANSLATIONS.waitlistBanner.ok}
           </button>
@@ -112,7 +112,7 @@ export default function WaitlistSignup() {
             className={`w-full py-2 rounded text-white font-bold font-fginterface transition ${
               loading
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
+                : "bg-[#FF6648] hover:bg-[#E55539]"
             }`}
           >
             {loading ? "Submitting..." : TRANSLATIONS.waitlistBanner.button}

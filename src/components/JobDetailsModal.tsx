@@ -31,10 +31,9 @@ const JobDetailsModal = ({ job, isOpen, onClose }: JobDetailsModalProps) => {
         <div className="sticky top-0 z-10 flex items-center justify-between p-6 border-b border-white/10 bg-black/20 backdrop-blur-sm">
           <div className="flex items-center space-x-4">
             <div className={cn(
-              'p-3 rounded-full',
-              COLORS.iconPrimary
+              'p-3 rounded-full bg-gray-900 border border-gray-700'
             )}>
-              <Building className={cn('w-6 h-6', COLORS.iconPrimaryText)} />
+              <Building className={cn('w-6 h-6 text-white')} />
             </div>
             <div>
               <h1 className={cn('text-2xl font-bold', COLORS.textPrimary)}>
@@ -168,9 +167,8 @@ const JobDetailsModal = ({ job, isOpen, onClose }: JobDetailsModalProps) => {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                'w-full block py-4 rounded-xl font-semibold text-lg transition-all duration-300 bg-gradient-to-r text-center',
-                COLORS.buttonGradient,
-                `hover:${COLORS.buttonHover}`,
+                'w-full block py-4 rounded-xl font-semibold text-lg transition-all duration-300 text-center text-white',
+                'bg-[#FF6648] hover:bg-[#E55539]',
                 'transform hover:scale-[1.02]'
               )}
             >

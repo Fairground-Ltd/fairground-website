@@ -190,9 +190,7 @@ const Jobs = () => {
               )}
             >
               <div className={cn(
-                'inline-flex items-center justify-center w-12 h-12 rounded-full mb-4',
-                COLORS.iconPurple,
-                COLORS.iconPurpleText
+                'inline-flex items-center justify-center w-12 h-12 rounded-full mb-4 bg-gray-900 border border-gray-700'
               )}>
                 {benefit.icon}
               </div>
@@ -224,9 +222,8 @@ const Jobs = () => {
           <a 
             href="mailto:careers@fairground.music"
             className={cn(
-              'inline-block px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-gradient-to-r text-white',
-              COLORS.buttonGradient,
-              `hover:${COLORS.buttonHover}`,
+              'inline-block px-8 py-3 rounded-full font-semibold transition-all duration-300 text-white',
+              'bg-[#FF6648] hover:bg-[#E55539]',
               'transform hover:scale-105'
             )}
           >

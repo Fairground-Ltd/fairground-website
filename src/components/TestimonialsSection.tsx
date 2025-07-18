@@ -21,17 +21,16 @@ export const TestimonialsSection = () => {
         {TRANSLATIONS.testimonials.reviews.map((review, index) => (
           <AnimatedCard key={index} className="relative" glowColor="glowSecondary">
             <div className={cn(
-              'absolute top-4 right-4 p-2 rounded-lg',
-              COLORS.iconSecondary
+              'absolute top-4 right-4 p-2 rounded-lg bg-gray-900 border border-gray-700'
             )}>
-              <Quote className={cn('w-5 h-5', COLORS.iconSecondaryText)} />
+              <Quote className={cn('w-5 h-5 text-white')} />
             </div>
             
             <div className="flex mb-4">
               {[...Array(review.rating)].map((_, i) => (
                 <Star
                   key={i}
-                  className={cn('w-5 h-5 fill-current', COLORS.iconSecondaryText)}
+                  className={cn('w-5 h-5 fill-current text-white')}
                 />
               ))}
             </div>

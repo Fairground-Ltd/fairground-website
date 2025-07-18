@@ -8,29 +8,27 @@ import { cn } from '@/lib/utils';
 export const FeaturesGrid = () => {
   const features = [
     {
-      icon: <Music className={cn('w-8 h-8', COLORS.iconPrimaryText)} />,
+      icon: <Music className={cn('w-8 h-8 text-white')} />,
       title: TRANSLATIONS.features.discover.title,
       description: TRANSLATIONS.features.discover.description,
-      iconBg: COLORS.iconPrimary,
-      glowColor: 'glowPrimary' as const,
+      iconBg: 'bg-gray-900 border border-gray-700',
+      glowColor: "glowPrimary" as keyof typeof COLORS,
     },
     {
-      icon: <Sparkles className={cn('w-8 h-8', COLORS.iconSecondaryText)} />,
+      icon: <Sparkles className={cn('w-8 h-8 text-white')} />,
       title: TRANSLATIONS.features.playlists.title,
       description: TRANSLATIONS.features.playlists.description,
-      iconBg: COLORS.iconSecondary,
-      glowColor: 'glowSecondary' as const,
+      iconBg: 'bg-gray-900 border border-gray-700',
+      glowColor: "glowSecondary" as keyof typeof COLORS,
     },
     {
-      icon: <Users className={cn('w-8 h-8', COLORS.iconTertiaryText)} />,
+      icon: <Users className={cn('w-8 h-8 text-white')} />,
       title: TRANSLATIONS.features.community.title,
       description: TRANSLATIONS.features.community.description,
-      iconBg: COLORS.iconTertiary,
-      glowColor: 'glowPrimary' as const,
+      iconBg: 'bg-gray-900 border border-gray-700',
+      glowColor: "glowAccent" as keyof typeof COLORS,
     },
-  ];
-
-  return (
+  ];  return (
     <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-20">
       {features.map((feature, index) => (
         <AnimatedCard key={index} className="text-center" glowColor={feature.glowColor}>

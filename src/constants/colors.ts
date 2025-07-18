@@ -18,8 +18,8 @@ export const COLORS = {
   textMuted: 'text-gray-400',             // Subtle text and labels
   
   // Interactive elements - Brand pink-orange primary system
-  buttonGradient: 'from-orange-500 to-red-500',    // Primary button gradient
-  buttonHover: 'from-orange-600 to-red-600',       // Hover state
+  buttonGradient: 'bg-[#FF6648] hover:bg-[#E55539]',   // Primary button - flat brand color
+  buttonHover: 'bg-[#E55539]',                         // Hover state - darker brand color
   
   // Card system - Glassmorphism with brand consistency
   cardBackground: 'bg-white/5',           // Subtle card background
