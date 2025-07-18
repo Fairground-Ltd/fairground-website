@@ -36,10 +36,9 @@ export const IncentivesSection = () => {
           return (
             <AnimatedCard key={index} className="text-center" glowColor="glowPrimary">
               <div className={cn(
-                'inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6',
-                COLORS.iconPrimary
+                'inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 bg-gray-900 border border-gray-700'
               )}>
-                <IconComponent className={cn('w-8 h-8', COLORS.iconPrimaryText)} />
+                <IconComponent className={cn('w-8 h-8 text-white')} />
               </div>
               <h3 className={cn(
                 'text-2xl font-bold mb-4 font-fgdisplay',

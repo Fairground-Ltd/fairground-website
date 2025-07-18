@@ -20,9 +20,9 @@ export const WaitlistModal = ({
         <Button 
           size="lg" 
           className={cn(
-            'bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white font-fginterface font-semibold px-12 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl',
-            'border border-orange-500/50 hover:border-orange-400/70',
-            'hover:shadow-orange-500/25',
+            'bg-[#FF6648] hover:bg-[#E55539] text-white font-fginterface font-semibold px-12 py-4 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl',
+            'border border-[#FF6648]/50 hover:border-[#FF6648]/70',
+            'hover:shadow-[#FF6648]/25',
             triggerClassName
           )}
         >
